@@ -37,8 +37,7 @@ class Solution:
         # 最左侧为k，i和j左右夹逼
         length = len(nums)
         k = 0
-        i = 1
-        j = len(nums) - 1
+
         res = []
         # 遍历k，也就是最左侧的参考值
         for k in range(length - 2):
@@ -48,26 +47,29 @@ class Solution:
             # 如果nums[k]（用作比较的参数，作为另两个数的和的存在的元素重复了，则全跳过，直接对比下一个不同的nums[k]）
             if k > 0 and nums[k] == nums[k - 1]:
                 continue
+            i = 1 + k
+            j = len(nums) - 1
             while i < j:
-                s = sum[k] + sum[i] + sum[j]
-                # nums[k]是参考值，nums[i]最小值，nums[j]最大值，所以要移动i
+                s = nums[k] + nums[i] + nums[j]
+                # nums[k]是参考值，nums[i]最小值，nums[j]最大值，所以要移动i,让小的数字变大
                 if s < 0:
                     i += 1
                     # nums[i]也要跳过重复的项目
                     while i < j and nums[i] == nums[i - 1]:
                         i += 1
+                # nums[k]是参考值，nums[i]最小值，nums[j]最大值，所以要移动j，让打的数字变小
                 elif s > 0:
                     j -= 1
                     # nums[j]也要跳过重复的项目
-                    while i < j and nums[i] == nums[i - 1]:
-                        i += 1
+                    while i < j and nums[j] == nums[j + 1]:
+                        j -= 1
                 else:
-                    res.append(nums[k], nums[i], nums[j])
+                    res.append([nums[k], nums[i], nums[j]])
                     i += 1
-                    j - +1
+                    j -= 1
                     while i < j and nums[i] == nums[i - 1]:
                         i += 1
-                    while i < j and nums[i] == nums[i - 1]:
-                        i += 1
-            return res
+                    while i < j and nums[j] == nums[j + 1]:
+                        j -= 1
+        return res
 # leetcode submit region end(Prohibit modification and deletion)
