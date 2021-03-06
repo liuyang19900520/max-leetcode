@@ -76,4 +76,14 @@ class Solution:
 
         return True
 
+    def hasCycle2(self, head: ListNode) -> bool:
+        seen = set()
+
+        while head:
+            if head in seen:
+                return True
+            seen.add(head)
+            head = head.next
+        return False
+
 # leetcode submit region end(Prohibit modification and deletion)
