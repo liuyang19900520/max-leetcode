@@ -39,4 +39,22 @@ class Solution:
 
         return result
 
+    def singleNumber2(self, nums: List[int]) -> List[int]:
+        eor = 0
+        for x in nums:
+            eor ^= x
+        # eor = a ^ b
+        # eor =  1010111100
+        # ~eor = 0101000011
+        # ~eor+1 = 0101000100
+        rightOne = eor & (~eor + 1)
+        # rightOne 0000000100 也就会取出了自己最右侧的1
+
+        eor2 = 0
+        for x in nums:
+            if x & rightOne == 0:
+                eor2 ^= x
+
+        return [eor2, eor ^ eor2]
+
 # leetcode submit region end(Prohibit modification and deletion)
