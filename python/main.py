@@ -1,14 +1,9 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-from No0136_Single_Number import Solution
+from No0283_Move_Zeros import Solution0283
 
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    a = Solution()
-    arr =[1,2,2,3,3,4,4,4,4,5,5,6]
-    result = a.singleNumber2(arr)
-    print(result)
+a = Solution0283()
+arr = [0,1,0,3,12]
+a.moveZeroes2(arr)
+print(arr)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
