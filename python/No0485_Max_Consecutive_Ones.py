@@ -38,7 +38,7 @@ class Solution:
     count = 0
     result = 0
     for num in nums:
-      if nums == 1:
+      if num == 1:
         count = count + 1
       else:
         result = max(result, count)
