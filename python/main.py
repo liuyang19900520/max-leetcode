@@ -1,4 +1,4 @@
-from No0027_Remove_Element import Solution
+from No0203_Remove_Elements import Solution
 
 # Press the green button in the gutter to run the script.
 s = Solution()
