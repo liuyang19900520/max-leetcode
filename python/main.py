@@ -1,9 +1,9 @@
-from No0203_Remove_Elements import Solution
+from No0020_Valid_Parentheses import Solution
 
 # Press the green button in the gutter to run the script.
 s = Solution()
-arr = [3, 2, 2, 3]
-result = s.removeElement(arr, 3)
+
+result = s.isValid("(]")
 print(result)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
