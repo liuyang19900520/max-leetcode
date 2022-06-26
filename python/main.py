@@ -1,11 +1,11 @@
-from No0217_Contains_Duplicate import Solution
+from No0144_Tree_Preorder_Traversal import TreeNode
+from No0144_Tree_Preorder_Traversal import Solution
 
 # Press the green button in the gutter to run the script.
 s = Solution()
-res = []
-nums1 = [4, 1, 2,1]
-nums2 = [1, 3, 4, 2]
-result = s.containsDuplicate(nums1)
+
+root = TreeNode(1, None, TreeNode(2, TreeNode(3, None, None), None))
+result = s.preorderTraversal(root)
 print(result)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
