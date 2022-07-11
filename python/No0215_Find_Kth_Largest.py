@@ -33,8 +33,22 @@ class Solution:
     maxHeap = nums
     heapq._heapify_max(maxHeap)
     while k > 0:
+      # 每次都pop出最大的
       x = heapq._heappop_max(maxHeap)
+      # pop到第k个
       k -= 1
     return x
+
+  # 最小堆的方法。
+  def findKthLargest2(self, nums: List[int], k: int) -> int:
+    heap = []
+
+    for x in nums:
+      if len(heap) < k or x > heap[0]:
+        heapq.heappush(heap,x)
+      if (len(heap) > k):
+        heapq.heappop(heap)
+        heapq.heapify(heap)
+    return heapq.heappop(heap)
 
 # leetcode submit region end(Prohibit modification and deletion)
