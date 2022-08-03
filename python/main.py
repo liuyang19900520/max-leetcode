@@ -1,8 +1,13 @@
-from No0215_Find_Kth_Largest import Solution
+from No692_Top_K_Frequent import Solution
 
 s = Solution()
 
-nums = [3,2,1,5,6,4]
-print(s.findKthLargest2(nums,2)  )
+nums =  ["i","love","leetcode","i","love","coding"]
+k = 2
+print(s.topKFrequent(nums,3))
+
+
+
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

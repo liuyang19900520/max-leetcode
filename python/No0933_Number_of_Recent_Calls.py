@@ -59,7 +59,8 @@ class RecentCounter:
   def ping(self, t: int) -> int:
     # 传入一个数字，当前时间毫秒数
     self.q.append(t)
-    # 当最新的t-队列首位》3000的时候，弹出队列
+    # 当最新的t-队列首位>3000的时候，弹出队列
+    # 换句话讲，只保留最近3000ms中的数组，最后只要返回数组长度就完成了
     while len(self.q) > 0 and t - self.q[0] > 3000:
       self.q.poplef()
       # 返回队列长度
