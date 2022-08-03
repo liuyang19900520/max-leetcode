@@ -64,7 +64,7 @@ class Solution:
     while len(heap) > 0:
       temp = heapq.heappop(heap)
       res.append(temp.key)
-      res.reverse()
+    res.reverse()
     return res
 
 
@@ -74,7 +74,9 @@ class Node:
     self.time = time
 
   def __lt__(self, node):
+    # 当出现次数相同的时候，当前文字code值大的在后面
     if self.time == node.time:
       return self.key > node.key
+    # 当文字出现不同的时候，出现次数少的再后面
     return self.time < node.time
 # leetcode submit region end(Prohibit modification and deletion)
